@@ -1,0 +1,11 @@
+.DS_Store
+*.exe
+*.dll
+*.so
+*.dylib
+bin/
+dist/
+coverage.out
+*.test
+git-ark
+

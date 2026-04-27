@@ -1,0 +1,136 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>git-ark docs</title>
+  <meta name="description" content="Clear, concise docs for git-ark backups, commands, config, and workflows.">
+  <link rel="stylesheet" href="./styles.css">
+</head>
+<body>
+  <main class="page">
+    <section class="hero">
+      <div class="eyebrow">git-ark docs</div>
+      <h1>Back up Git repos with a calmer default path.</h1>
+      <p class="lede">
+        <strong>git-ark</strong> backs up branches, tags, and optional bundles to multiple remotes.
+        It keeps the everyday path conservative, then opens up mirror mode, pruning, and provider-aware diagnostics
+        only when you ask for them.
+      </p>
+      <div class="hero-actions">
+        <a href="https://github.com/sphireinc/git-ark/blob/main/README.md" class="button button-primary">Read the full README</a>
+        <a href="https://github.com/sphireinc/git-ark" class="button button-secondary">View the repo</a>
+      </div>
+      <div class="hero-grid">
+        <article class="panel">
+          <span class="panel-label">Safe by default</span>
+          <h2>Branches and tags first</h2>
+          <p>Safe mode pushes branches and tags without mirroring every ref.</p>
+        </article>
+        <article class="panel">
+          <span class="panel-label">Visible history</span>
+          <h2>Metadata that remembers</h2>
+          <p>Every run is recorded so <code>status</code> can show the latest backup and a short history.</p>
+        </article>
+        <article class="panel">
+          <span class="panel-label">Gentle warnings</span>
+          <h2>Provider-aware health checks</h2>
+          <p><code>doctor</code> checks connectivity and points out obvious provider mismatches.</p>
+        </article>
+      </div>
+    </section>
+
+    <section class="section">
+      <div class="section-head">
+        <h2>Start here</h2>
+        <p>These are the smallest useful steps for a new repo.</p>
+      </div>
+      <div class="steps">
+        <article class="card">
+          <span>1</span>
+          <h3>Create a starter config</h3>
+          <p><code>git-ark init</code> writes a commented <code>git-ark.yml</code> you can edit right away.</p>
+        </article>
+        <article class="card">
+          <span>2</span>
+          <h3>Validate the repo</h3>
+          <p><code>git-ark validate</code> checks the config, the repo path, and the most obvious safety issues.</p>
+        </article>
+        <article class="card">
+          <span>3</span>
+          <h3>Dry run once</h3>
+          <p><code>git-ark backup --dry-run</code> shows the plan without mutating remotes or creating bundles.</p>
+        </article>
+        <article class="card">
+          <span>4</span>
+          <h3>Run the backup</h3>
+          <p><code>git-ark backup</code> executes the chosen mode and writes metadata when enabled.</p>
+        </article>
+      </div>
+    </section>
+
+    <section class="split">
+      <article class="stack">
+        <div class="section-head">
+          <h2>Commands</h2>
+          <p>Small surface area, easy to remember.</p>
+        </div>
+        <ul class="list">
+          <li><strong>init</strong> - write a starter config</li>
+          <li><strong>validate</strong> - check the config and local repo</li>
+          <li><strong>backup</strong> - run the backup flow</li>
+          <li><strong>status</strong> - inspect current state and backup history</li>
+          <li><strong>doctor</strong> - run health and provider diagnostics</li>
+          <li><strong>remotes list</strong> - inspect configured remotes</li>
+          <li><strong>remotes sync</strong> - align local remotes with config</li>
+          <li><strong>version</strong> - print the build version</li>
+        </ul>
+      </article>
+      <article class="stack">
+        <div class="section-head">
+          <h2>Useful flags</h2>
+          <p>The ones you will probably touch most often.</p>
+        </div>
+        <div class="flag-grid">
+          <div class="flag"><code>--dry-run</code><span>Preview the plan.</span></div>
+          <div class="flag"><code>--repo</code><span>Point at another repository path.</span></div>
+          <div class="flag"><code>--config</code><span>Load a specific config file.</span></div>
+          <div class="flag"><code>--json</code><span>Emit machine-friendly output where supported.</span></div>
+          <div class="flag"><code>--yes</code><span>Skip mirror confirmation in non-interactive shells.</span></div>
+          <div class="flag"><code>--prune</code><span>Prune remote refs in safe mode.</span></div>
+        </div>
+      </article>
+    </section>
+
+    <section class="section">
+      <div class="section-head">
+        <h2>Config snapshot</h2>
+        <p>The config is intentionally plain YAML so humans can skim it quickly.</p>
+      </div>
+      <div class="code-block">
+<pre><code>version: 1
+mode: "safe"
+remotes:
+  github:
+    url: git@github.com:example/example-backup.git
+    provider: github
+options:
+  push_branches: true
+  push_tags: true
+  prune: false
+  write_metadata: true
+metadata:
+  path: .git/git-ark-last-backup.json</code></pre>
+      </div>
+    </section>
+
+    <section class="footer-panel">
+      <div>
+        <h2>Read the details in the README</h2>
+        <p>The site is the quick start. The README carries the full command, config, and troubleshooting notes.</p>
+      </div>
+        <a href="https://github.com/sphireinc/git-ark/blob/main/README.md" class="button button-primary">Open README</a>
+    </section>
+  </main>
+</body>
+</html>
