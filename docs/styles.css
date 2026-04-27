@@ -71,6 +71,10 @@ pre {
   text-transform: uppercase;
 }
 
+.eyebrow > a {
+  color: rgb(0, 100, 0);
+}
+
 h1,
 h2,
 h3,
@@ -83,6 +87,9 @@ h1 {
   font-size: clamp(3rem, 8vw, 5.8rem);
   line-height: 0.94;
   letter-spacing: -0.05em;
+}
+.primary-h1 {
+  max-width: 16ch;
 }
 
 .lede {
