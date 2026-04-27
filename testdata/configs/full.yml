@@ -1,0 +1,57 @@
+version: 1
+repo: "."
+mode: "safe"
+remotes:
+  github:
+    url: git@github.com:example/example-backup.git
+    enabled: true
+    required: true
+    provider: github
+    description: GitHub backup mirror
+  gitlab:
+    url: git@gitlab.com:example/example-backup.git
+    enabled: true
+    required: true
+    provider: gitlab
+  bitbucket:
+    url: git@bitbucket.org:example/example-backup.git
+    enabled: false
+    required: false
+    provider: bitbucket
+options:
+  manage_remotes: true
+  push_branches: true
+  push_tags: true
+  push_notes: false
+  push_all_refs: false
+  prune: false
+  verify_clean_worktree: false
+  continue_on_error: true
+  confirm_dangerous_operations: true
+  fetch_before_backup: false
+  pull_before_backup: false
+  skip_lfs: false
+  include_archived_branches: true
+  write_metadata: true
+branch_filters:
+  include:
+    - main
+    - release/*
+  exclude:
+    - wip/*
+tag_filters:
+  include:
+    - v*
+  exclude:
+    - test-*
+bundle:
+  enabled: true
+  path: ./backups
+  filename_template: "{{repo}}-{{timestamp}}.bundle"
+  include_all_refs: true
+logging:
+  level: debug
+  format: text
+metadata:
+  path: .git/git-ark-last-backup.json
+

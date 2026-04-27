@@ -8,4 +8,5 @@ dist/
 coverage.out
 *.test
 git-ark
-
+git-ark.yml
+.idea/

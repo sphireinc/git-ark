@@ -1,0 +1,5 @@
+mode: warp
+remotes:
+  github:
+    url: git@github.com:example/example-backup.git
+
