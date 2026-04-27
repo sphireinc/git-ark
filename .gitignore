@@ -7,6 +7,6 @@ bin/
 dist/
 coverage.out
 *.test
-git-ark
-git-ark.yml
+/git-ark
+/git-ark.yml
 .idea/
