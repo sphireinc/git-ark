@@ -52,7 +52,7 @@ go run ./cmd/git-ark --help
 
 ### Tagged Builds
 
-Tagged pushes trigger the release workflow in [.github/workflows/release.yml](./.github/workflows/release.yml), which builds binaries for Linux, macOS, and Windows, creates a GitHub Release, and attaches release assets plus checksums.  Those can be found and downloaded from [Releases](https://github.com/sphireinc/git-ark/releases).
+Tagged pushes trigger the release workflow in [.github/workflows/release.yml](./.github/workflows/release.yml), which builds binaries for Linux, macOS, and Windows, creates a GitHub Release, and attaches release assets plus checksums. The same workflow can also be run manually from the GitHub Actions UI by providing a tag name like `v1.0.2`. Those releases can be found and downloaded from [Releases](https://github.com/sphireinc/git-ark/releases).
 
 ## Quick Start
 
