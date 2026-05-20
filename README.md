@@ -20,7 +20,7 @@
 
 It is built around a simple idea: keep the default backup path safe, explicit, and easy to audit.
 
-While service-side technical failures are rare on platforms like GitHub, GitLab, Bitbucket, et al. - they can still happen.
+While service-side technical failures are rare on platforms like GitLab, Bitbucket, et al. - they can still happen - take for instance GitHub.
 
 This project was created to mitigate data loss as a result of service-side technical failures, account loss, or some 
 other act of (digital) nature. 
